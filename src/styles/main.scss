@@ -1,0 +1,92 @@
+// Cyberpunk Theme
+$neon-pink: #ff00ff;
+$neon-blue: #00f3ff;
+$bg-dark: #0a0a0a;
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: $bg-dark;
+  font-family: 'Cybertron', sans-serif;
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.cyber-nav {
+  position: fixed;
+  top: 2rem;
+  right: 3rem;
+  display: flex;
+  gap: 2rem;
+  z-index: 100;
+
+  .neon-link {
+    color: $neon-blue;
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem;
+    transition: 0.3s;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $neon-pink;
+      transition: 0.3s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+  .glitch {
+    font-size: 8rem;
+    color: $neon-pink;
+    position: relative;
+    animation: glitch 3s infinite;
+
+    &::before, &::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &::before {
+      color: $neon-blue;
+      animation: glitch-1 2s infinite;
+    }
+
+    &::after {
+      color: lime;
+      animation: glitch-2 1.5s infinite;
+    }
+  }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}

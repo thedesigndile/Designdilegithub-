@@ -1,0 +1,67 @@
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 5rem;
+  position: relative;
+  z-index: 10;
+
+  .project-card {
+    position: relative;
+    height: 600px;
+    border: 2px solid $neon-pink;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, border-color 0.3s;
+
+    &:hover {
+      border-color: $neon-blue;
+      transform: translateY(-10px);
+
+      .project-overlay {
+        opacity: 0.2;
+      }
+    }
+  }
+
+  .project-title {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    color: white;
+    font-size: 2rem;
+    text-shadow: 0 0 10px rgba($neon-pink, 0.5);
+  }
+
+  .project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, $neon-pink, $neon-blue);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+}
+
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+
+  &.active {
+    opacity: 1;
+  }
+
+  .fullscreen-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

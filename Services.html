@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Design Dile | Services</title>
+  <link rel="stylesheet" href="./src/styles/main.scss">
+  <!-- Voice Recognition Library -->
+  <script src="https://cdn.jsdelivr.net/npm/annyang@2.6.1/dist/annyang.min.js"></script>
+</head>
+<body>
+  <canvas class="webgl"></canvas>
+
+  <!-- Voice Command UI -->
+  <div class="voice-command">
+    <div class="voice-pulse"></div>
+    <button id="voiceBtn" class="neon-button">🎤 Say "Show [Service]"</button>
+  </div>
+
+  <!-- Holographic Cards Grid -->
+  <div class="services-grid">
+    <div class="hologram-card" data-service="branding">
+      <div class="hologram-front">
+        <h3>Cyber Branding</h3>
+      </div>
+      <div class="hologram-back">
+        <p>AI-driven identity systems</p>
+      </div>
+    </div>
+    <!-- Add more cards for UI/UX, Motion, etc. -->
+  </div>
+
+  <script type="module" src="./src/scripts/servicesAnimations.js"></script>
+</body>
+</html>
